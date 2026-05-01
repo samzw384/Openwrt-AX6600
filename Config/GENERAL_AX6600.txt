@@ -84,6 +84,11 @@ CONFIG_PACKAGE_kmod-usb-net-cdc-mbim=n
 CONFIG_PACKAGE_kmod-usb-net-cdc-ncm=n
 CONFIG_PACKAGE_kmod-usb-net-cdc-subset=n
 CONFIG_PACKAGE_kmod-usb-net-huawei-cdc-ncm=n
+
+#sing-box support
+CONFIG_PACKAGW_kmod-inet-diag=y
+CONFIG_PACKAGW_kmod-netlink-diag=y
+
 # iPhone USB 共享
 CONFIG_PACKAGE_kmod-usb-net-ipheth=n
 CONFIG_PACKAGE_kmod-usb-net-qmi-wwan=n
