@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sed -i 's/luci-app-athena-led//g' ../target/linux/qualcommax/image/ipq60xx.mk
+
 PKG_PATH="$GITHUB_WORKSPACE/wrt/package/"
 
 #预置HomeProxy数据
@@ -74,5 +76,3 @@ if [ -f "$RUST_FILE" ]; then
 
 	cd $PKG_PATH && echo "rust has been fixed!"
 fi
-
-sed -i 's/luci-app-athena-led//g' target/linux/qualcommax/image/ipq60xx.mk
