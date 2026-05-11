@@ -95,11 +95,11 @@ jobs:
 
       - name: Clone Code
         run: |
-          # git clone --depth=1 --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
-          git clone $WRT_REPO ./wrt/
+          git clone --depth=1 --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
+
+          rm -rf ./wrt/package/emortal/luci-app-athena-led
           
-          cd ./wrt/ && git checkout 5a6252f84b6f194e9f78328198f121110037599f
-          echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
+          cd ./wrt/ && echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
           PROJECT_MIRRORS_FILE="./scripts/projectsmirrors.json"
