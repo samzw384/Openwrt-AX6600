@@ -1,22 +1,5 @@
 #!/bin/bash
 
-# 1. 执行修改命令
-echo "Step 1: Removing hardcoded athena-led from Makefile..."
-TARGET_FILE="target/linux/qualcommax/image/ipq60xx.mk"
-
-if [ -f "$TARGET_FILE" ]; then
-    sed -i 's/luci-app-athena-led//g' "$TARGET_FILE"
-    
-    # 2. 立即校验结果
-    if grep -q "luci-app-athena-led" "$TARGET_FILE"; then
-        echo "❌ ERROR: luci-app-athena-led STILL EXISTS in $TARGET_FILE!"
-    else
-        echo "✅ SUCCESS: luci-app-athena-led has been removed from $TARGET_FILE."
-    fi
-else
-    echo "⚠️ WARNING: $TARGET_FILE NOT FOUND! Check your path."
-fi
-
 PKG_PATH="$GITHUB_WORKSPACE/wrt/package/"
 
 #预置HomeProxy数据
