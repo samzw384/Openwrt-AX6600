@@ -98,6 +98,7 @@ jobs:
           git clone --depth=1 --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
           rm -rf ./wrt/package/emortal/luci-app-athena-led
+          sed -i 's/luci-app-athena-led//g' ./wrt/target/linux/qualcommax/image/ipq60xx.mk
           
           cd ./wrt/ && echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
